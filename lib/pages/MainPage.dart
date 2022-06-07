@@ -10,25 +10,27 @@ class MainPage extends StatelessWidget {
       body: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.all(12.0),
+            padding: const EdgeInsets.all(25.0),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-              Text("Women"),
+                buildMenuText("Women"),
               // Spacer(),
-              Text("Kids"),
+                buildMenuText("Kids"),
               // Spacer(),
-              Text("Shoes"),
+                buildMenuText("Shoes"),
               // Spacer(),
-              Text("Bags"),
+                buildMenuText("Bags"),
             ],
             ),
           ),
-          Text("Hello World"),
-          Text("Hello World"),
-          Text("Hello World"),
+          Expanded(child: Image.asset("assets/bag.jpeg", fit: BoxFit.cover, width: double.infinity,)), // Expanded : flex와 비슷, 남는 공간을 꽉 채워라
+          SizedBox(height: 2,), // margin 대신에
+          Expanded(child: Image.asset("assets/cloth.jpeg", fit: BoxFit.cover, width: double.infinity,)),
         ],
       ),
     );
   }
+
+  Text buildMenuText(String title) => Text(title, style: TextStyle(fontWeight: FontWeight.bold),);
 }
